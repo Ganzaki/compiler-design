@@ -5937,7 +5937,7 @@ void get_selector(string a, std::map<string, SymbolTableTree> &mapper, int &slct
 
 void ass_creator(std::vector<Quadruple> &icg, std::map<string, SymbolTableTree> &mapper){
     
-    assembly_file.open("ass.s", ios::out | ios::trunc );
+    assembly_file.open("Output/ass.s", ios::out | ios::trunc );
 
     assembly_file<<".data\n";
     for(auto zz : printf_body){
@@ -6236,7 +6236,7 @@ void ass_creator(std::vector<Quadruple> &icg, std::map<string, SymbolTableTree> 
     }
     assembly_file<<"li $v0 10\nsyscall\n";
     assembly_file.close();
-    std::fstream fs("ass.s", std::fstream::in | std::fstream::out);
+    std::fstream fs("Output/ass.s", std::fstream::in | std::fstream::out);
     if (fs.is_open()) {
         while (!fs.eof()) {
             if (fs.get() == '#') {

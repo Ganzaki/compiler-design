@@ -1,0 +1,50 @@
+=	0		a#1
+=	'a'		c#1
+Label			l1
+<	a#1	9	t4
+ifFalse	t4		l2
+Param	c#1		
+Param	a#1		
+Param	"First while a = %d, c = %c\n"		
+call	printf	3	
+==	1	a#1	t5
+ifFalse	t5		l4
+Param	a#1		
+Param	"case 1 a = %d\n"		
+call	printf	2	
+=	2		a#1
+Label			l6
+<	a#1	7	t6
+ifFalse	t6		l7
+Param	c#1		
+Param	a#1		
+Param	"Second while a = %d, c = %c\n"		
+call	printf	3	
+=	a#1		t8
++	t8	1	a#1
+=	c#1		t10
++	t10	1	c#1
+goto			l6
+Label			l7
+goto			l3
+goto			l5
+Label			l4
+Label			l5
+Param	c#1		
+Param	a#1		
+Param	"default a = %d, c = %c\n"		
+call	printf	3	
+=	a#1		t12
+=	a#1		t11
++	t12	1	a#1
+=	c#1		t14
++	t14	1	c#1
+goto			l3
+Label			l3
+goto			l1
+Label			l2
+Param	c#1		
+Param	a#1		
+Param	"out a = %d, c = %c\n"		
+call	printf	3	
+Label			l0

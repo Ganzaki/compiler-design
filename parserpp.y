@@ -925,7 +925,7 @@ void check_icg(struct SymbolTableTree*node){
     std::vector<Quadruple> &icg = get_icg(node, mapper);
     optimiser(icg, mapper);
     ofstream inter_mediate_code;
-    inter_mediate_code.open("imc.ta", ios::out | ios::trunc );
+    inter_mediate_code.open("Output/imc.txt", ios::out | ios::trunc );
 
     for(auto t : icg){
         inter_mediate_code<<(t.op)<<"\t"<<(t.arg1)<<"\t"<<(t.arg2)<<"\t"<<(t.result)<<"\n";

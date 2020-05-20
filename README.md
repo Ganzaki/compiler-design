@@ -7,8 +7,11 @@
   chmod +x setup.sh
   ./setup.sh
 ```
-
-
+If you want to compile the compiler :
+```bash
+  chmod +x install.sh
+  ./install.sh
+```
 
 ## Example input
  
@@ -36,10 +39,10 @@ int main()
 ### Output
 
 
-Parse Tree:
+AST(Abstract Syntax tree):
 
 
-![Image description](OutputTree/tree.png)
+![Image description](Output/tree.png)
 
 
 Intermediate code : 

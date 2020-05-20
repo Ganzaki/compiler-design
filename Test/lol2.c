@@ -1,6 +1,16 @@
 int main()
 {
-  int a=1;
+  int a=0;
   a++;
-  printf("%d", a);
+  while(a<10){
+    switch(a){
+        case 1:
+            a=7;
+            break;
+        case 7: 
+            ++a;
+        default:
+            ++a;
+    }
+  }
 }

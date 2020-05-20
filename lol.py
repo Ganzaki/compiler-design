@@ -29,7 +29,7 @@ try:
 
 
 
-    DotExporter(tt).to_picture("OutputTree/tree.png")
+    DotExporter(tt).to_picture("Output/ast.png")
 # DotExporter(tt).to_dotfile("OutputTree/trees.dot")
 
 except:
