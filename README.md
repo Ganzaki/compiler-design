@@ -4,9 +4,8 @@
 ## Run the following command before testing
 
 ```bash
-  sudo apt-get install eog
-  pip3 install anytree
-  chmod +x ex.sh
+  chmod +x setup.sh
+  ./setup.sh
 ```
 
 
