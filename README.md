@@ -50,8 +50,8 @@ Intermediate code :
 Label     l1
 !=  c#1 123 t0
 ifFalse t0    l2
-Param "%c\n"    
-Param c#1   
+Param c#1
+Param "%c\n"       
 call  printf  2 
 = c#1   t2
 + t2  1 c#1
