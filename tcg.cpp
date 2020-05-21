@@ -5950,7 +5950,7 @@ void ass_creator(std::vector<Quadruple> &icg, std::map<string, SymbolTableTree> 
         if(xx.second.dataType.find("float")!=string::npos || xx.second.dataType.find("double")!=string::npos){
             auto dT = "float";
             // if(xx.second.dataType.find("double")!=string::npos) dT = "double";
-            if(xx.second.value.length() > 0)
+            if(xx.second.value.length() > 1)
                 assembly_file<<(xx.first)<<(string(": .")+dT+" ")<<(xx.second.value)<<"\n";
             else
                 assembly_file<<(xx.first)<<(string(": .")+dT+" 0.0")<<"\n";
