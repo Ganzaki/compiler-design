@@ -372,6 +372,16 @@ string assignvar = "";
             std::string t1 = "t"+std::to_string(temp_counter++);
             if(node -> child[0] -> nodeType == "BinaryFOp"){
                 std::string t2 = get_icg_for_exp(node -> child[1], icg, mapper);
+                if((t2[0]=='_') || (t2[0]>='a' && t2[0]<='z') || (t2[0]>='A' && t2[0]<='Z'))
+                    mapper[t1] = *make_new_node("TempVariable", t1, "", mapper[t2].dataType, -1, node);
+                else{
+                    if(t2[0] == '\'' )
+                        mapper[t1] = *make_new_node("TempVariable", t1, "", "char", -1, node);
+                    else if(std::find(t2.begin(), t2.end(),'.')!=t2.end())
+                        mapper[t1] = *make_new_node("TempVariable", t1, "", "double", -1, node);
+                    else
+                        mapper[t1] = *make_new_node("TempVariable", t1, "", "long long int", -1, node);
+                }
                 Quadruple newq(node -> child[0] -> value, t2, "", t1);
                 icg.push_back(newq);
                 return t1;

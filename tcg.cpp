@@ -6215,14 +6215,28 @@ void ass_creator(std::vector<Quadruple> &icg, std::map<string, SymbolTableTree> 
                 {
                     int tpe=0;
                     get_selector(xxx, mapper, tpe);
-                    if(tpe == 3){
-                        assembly_file<<"l.s $f"+to_string(f0++)+" "<<(xxx)<<"\n";
+                    if((xxx[0]=='_') || (xxx[0]>='a' && xxx[0]<='z') || (xxx[0]>='A' && xxx[0]<='Z')){
+                    
+                        if(tpe == 3){
+                            assembly_file<<"l.s $f"+to_string(f0++)+" "<<(xxx)<<"\n";
+                        }
+                        else if(tpe == 2){
+                            assembly_file<<"lw $a"+to_string(a0++)+" "<<(xxx)<<"\n";
+                        }
+                        else if(tpe == 1){
+                            assembly_file<<"lb $a"+to_string(a0++)+" "<<(xxx)<<"\n";
+                        }
                     }
-                    else if(tpe == 2){
-                        assembly_file<<"lw $a"+to_string(a0++)+" "<<(xxx)<<"\n";
-                    }
-                    else if(tpe == 1){
-                        assembly_file<<"lb $a"+to_string(a0++)+" "<<(xxx)<<"\n";
+                    else{
+                        if(tpe == 3){
+                            assembly_file<<"li.s $f"+to_string(f0++)+" "<<(xxx)<<"\n";
+                        }
+                        else if(tpe == 2){
+                            assembly_file<<"li $a"+to_string(a0++)+" "<<(xxx)<<"\n";
+                        }
+                        else if(tpe == 1){
+                            assembly_file<<"lb $a"+to_string(a0++)+" "<<ascii_to_var[xxx]<<"\n";
+                        }
                     }
                 }
                 if(a0 >=4 || f0>=3) break;
