@@ -5757,7 +5757,7 @@ void minus_all(std::string a, std::string b, std::string c, std::map<std::string
             else 
                 assembly_file<<"li $a0 "<<a<<"\n";
             assembly_file<<"neg $t0 $a0\n";
-            assembly_file<<"move $a0 $t1\n";
+            assembly_file<<"move $a0 $t0\n";
             assembly_file<<"sw $a0 "<<c<<"\n";
             branch[c] = "lw $a0 "+c+"\nbne $a0 0 ";
             break;
@@ -5770,7 +5770,7 @@ void minus_all(std::string a, std::string b, std::string c, std::map<std::string
                 assembly_file<<"li.s $f0 "<<a<<"\ncvt.w.s $f1 $f0\nmfc1 $a0, $f1\n";
             }
             assembly_file<<"neg $t0 $a0\n";
-            assembly_file<<"move $a0 $t1\n";
+            assembly_file<<"move $a0 $t0\n";
             assembly_file<<"sw $a0 "<<c<<"\n";
             branch[c] = "lw $a0 "+c+"\nbne $a0 0 ";
             break;
@@ -5782,7 +5782,7 @@ void minus_all(std::string a, std::string b, std::string c, std::map<std::string
             else 
                 assembly_file<<"lb $a0 "<<(ascii_to_var[a])<<"\n";
             assembly_file<<"neg $t0 $a0\n";
-            assembly_file<<"move $a0 $t1\n";
+            assembly_file<<"move $a0 $t0\n";
             assembly_file<<"sw $a0 "<<c<<"\n";
             branch[c] = "lw $a0 "+c+"\nbne $a0 0 ";
             break;
@@ -5846,7 +5846,7 @@ void minus_all(std::string a, std::string b, std::string c, std::map<std::string
                 assembly_file<<"li.s $f0 "<<a<<"\ncvt.w.s $f1 $f0\nmfc1 $a0, $f1\n";
             }
             assembly_file<<"neg $t0 $a0\n";
-            assembly_file<<"move $a0 $t1\n";
+            assembly_file<<"move $a0 $t0\n";
             assembly_file<<"sb $a0 "<<c<<"\n";
             branch[c] = "lb $a0 "+c+"\nbne $a0 0 ";
             break;
@@ -5858,7 +5858,7 @@ void minus_all(std::string a, std::string b, std::string c, std::map<std::string
             else 
                 assembly_file<<"lb $a0 "<<(ascii_to_var[a])<<"\n";
             assembly_file<<"neg $t0 $a0\n";
-            assembly_file<<"move $a0 $t1\n";
+            assembly_file<<"move $a0 $t0\n";
             assembly_file<<"sb $a0 "<<c<<"\n";
             branch[c] = "lb $a0 "+c+"\nbne $a0 0 ";
 
@@ -5876,7 +5876,7 @@ void not_all(std::string a, std::string b, std::string c, std::map<std::string, 
             else 
                 assembly_file<<"li $a0 "<<a<<"\n";
             assembly_file<<"not $t0 $a0\n";
-            assembly_file<<"move $a0 $t1\n";
+            assembly_file<<"move $a0 $t0\n";
             assembly_file<<"sw $a0 "<<c<<"\n";
             branch[c] = "lw $a0 "+c+"\nbne $a0 0 ";
             break;
@@ -5887,7 +5887,7 @@ void not_all(std::string a, std::string b, std::string c, std::map<std::string, 
                 assembly_file<<"li.s $f0 "<<a<<"\ncvt.w.s $f1 $f0\nmfc1 $a0, $f1\n";
             }
             assembly_file<<"not $t0 $a0\n";
-            assembly_file<<"move $a0 $t1\n";
+            assembly_file<<"move $a0 $t0\n";
             assembly_file<<"sw $a0 "<<c<<"\n";
             branch[c] = "lw $a0 "+c+"\nbne $a0 0 ";
             break;
@@ -5897,7 +5897,7 @@ void not_all(std::string a, std::string b, std::string c, std::map<std::string, 
             else 
                 assembly_file<<"lb $a0 "<<(ascii_to_var[a])<<"\n";
             assembly_file<<"not $t0 $a0\n";
-            assembly_file<<"move $a0 $t1\n";
+            assembly_file<<"move $a0 $t0\n";
             assembly_file<<"sw $a0 "<<c<<"\n";
             branch[c] = "lw $a0 "+c+"\nbne $a0 0 ";
             break;
