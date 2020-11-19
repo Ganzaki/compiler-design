@@ -42,7 +42,7 @@ int main()
 AST(Abstract Syntax tree):
 
 
-![Image description](Output/tree.png)
+![Image description](Output/ast.png)
 
 
 Intermediate code : 
